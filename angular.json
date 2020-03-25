@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "covid-website"
+    }
+  },
+  "defaultProject": "covid-website",
+  "cli": {
+    "analytics": "95961036-cf53-4989-9cac-c64525533727"
+  }
 }
