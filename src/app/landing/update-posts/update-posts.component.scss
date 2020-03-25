@@ -1,0 +1,32 @@
+mat-panel-description {
+  position: absolute;
+  right: 10%;
+  text-align: right;
+}
+
+mat-expansion-panel-header {
+  @media (max-width: 700px) {
+    overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 20pt;
+  }
+}
+
+mat-panel-title {
+  @media (max-width: 700px) {
+    max-width: 35%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+}
+
+mat-panel-description {
+  @media (max-width: 700px) {
+    max-width: 45%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+}

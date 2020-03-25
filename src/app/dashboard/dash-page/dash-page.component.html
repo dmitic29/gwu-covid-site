@@ -1,0 +1,49 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile>
+    <button class="main-menu-button" mat-raised-button color="primary" (click)="goToRoute('dashboard/guidance-for-medical-staff')">
+      <div class="menu-btn-text">Guidance for Medical Staff</div>
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="2">
+    <button class="main-menu-button" mat-raised-button color="primary" (click)="goToRoute('dashboard/covid-faq')">
+      <div class="menu-btn-text">COVID-19 FAQ</div>
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button class="main-menu-button" mat-raised-button color="primary" (click)="goToRoute('dashboard/clinical-care')">
+      <div class="menu-btn-text">Clinical Care</div>
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button class="main-menu-button" mat-raised-button color="primary" (click)="goToRoute('dashboard/testing-for-covid')">
+      <div class="menu-btn-text">Testing for COVID-19</div>
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button class="main-menu-button" mat-raised-button color="primary" (click)="goToRoute('dashboard/at-home-care')">
+      <div class="menu-btn-text">At Home Care</div>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
+<div>
+  <button class="sign-in-btn" mat-flat-button color="accent" (click)="goToRoute('login')">Admin Sign In</button>
+  <h1>Latest Updates</h1>
+</div>
+
+<mat-card *ngFor="let post of posts">
+  <mat-card-header>
+    <mat-card-title>{{post.title}}</mat-card-title>
+    <mat-card-subtitle><h5>{{post.lastmod | date:'medium'}}</h5></mat-card-subtitle>
+    <mat-card-subtitle *ngIf="post.summary!=''">
+      <h5>Summary:</h5>
+      <pre>{{post?.summary}}</pre>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <pre>
+      {{post.body}}
+    </pre>
+  </mat-card-content>
+</mat-card>
+
+

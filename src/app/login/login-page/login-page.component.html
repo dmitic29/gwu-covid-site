@@ -1,0 +1,20 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <h1 class="login-head">Login</h1>
+  </mat-card-header>
+  <form [formGroup]="login" (ngSubmit)="attemptLogin()">
+    <mat-form-field>
+      <mat-label for="email">Email</mat-label>
+      <input matInput id="email" type="email" formControlName="Email"/>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <mat-label for="password">Password</mat-label>
+      <input matInput id="password" type="password" formControlName="Password"/>
+    </mat-form-field>
+    <br/>
+    <button color="accent" type="submit" mat-flat-button [disabled]="!login.valid">Sign In</button>
+  </form>
+  <br/>
+  <img id="loginImg" mat-card-image src="https://creativeservices.gwu.edu/sites/g/files/zaxdzs2746/f/downloads/gw_monogram_2c.png" alt="Photo of GWU Hospital">
+</mat-card>

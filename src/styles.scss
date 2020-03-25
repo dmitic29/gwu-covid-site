@@ -1,1 +1,159 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$covid-website-primary: mat-palette($mat-blue, A400);
+$covid-website-accent: mat-palette($mat-lime, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$covid-website-warn: mat-palette($mat-pink, A400);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$covid-website-theme: mat-light-theme($covid-website-primary, $covid-website-accent, $covid-website-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($covid-website-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: whitesmoke; }
+
+.login-card {
+  text-align: center;
+  max-width: 50%;
+  height: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
+  @media (max-width: 800px) {
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+#loginImg {
+  position: absolute;
+  top: 85%;
+  max-width: 10%;
+}
+
+.newPostForm {
+  text-align: center;
+}
+
+.postFormFiled {
+  width: 60%;
+}
+
+#summary {
+  line-height: 16pt;
+}
+
+.make-post-navigation {
+  width: 250px;
+  position: absolute;
+  bottom: 90%;
+  left: 75%;
+  @media (max-width: 700px) {
+    width: 100%;
+    top: 0pt;
+    left: 0pt;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+}
+
+.post-panel {
+  text-align: center;
+}
+
+.post-panel-content {
+  width: 60%;
+  @media (max-width: 700px) {
+    width: 80%;
+  }
+}
+
+.main-menu-button {
+  width: 100%;
+  height: 100%;
+  font-size: x-large;
+  border-radius: 20px;
+  @media (max-width: 550px) {
+    font-size: small;
+  }
+}
+
+.main-menu-button:hover {
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.menu-btn-text {
+  width: 95%;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  line-height: 20pt;
+  @media (max-width: 550px) {
+    line-height: 14pt;
+  }
+}
+
+.drawer-container {
+  height: 100%;
+  max-height: 100%;
+}
+
+.tlbr {
+  width: 100%;
+}
+
+.drawer-drawer {
+  height: 100%;
+  min-width: 10%;
+  max-width: 20%;
+  padding-top: 10pt;
+  text-align: center;
+}
+
+.drawer-content-contain {
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 5%;
+}
+
+.drawer-list, .drawer-list-item {
+  line-height: 30pt;
+  list-style-type: none;
+  list-style-position:inside;
+  margin:0;
+  padding:0;
+}
+
+.info-div {
+  width: 80%;
+  padding-top: 5%;
+  margin-bottom: 5%;
+}
+
+.info-card {
+  width: 100%;
+}
+
+.info-card-content {
+  margin-left: 25pt;
+  margin-right: 25pt;
+}

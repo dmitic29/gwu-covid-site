@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <h1>Make New Post</h1>
+  <span class="make-post-navigation">
+    <button color="primary" mat-flat-button (click)="toDash()">To Dashboard</button> &nbsp;
+  <button color="warn" mat-flat-button (click)="signOut()">Sign Out</button>
+  </span>
+</mat-card-header>
+
+  <form class="newPostForm" [formGroup]="post" (ngSubmit)="processPost()">
+    <mat-form-field class="postFormFiled">
+      <label for="header">Title</label>
+      <input id="header" matInput type="text" formControlName="Header"/>
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="postFormFiled">
+      <label for="summary">Summary</label>
+      <textarea id="summary" rows="6" matInput formControlName="Summary"></textarea>
+    </mat-form-field>
+    <mat-form-field class="postFormFiled">
+      <label for="body">Body</label>
+      <textarea id="body" rows="10" matInput formControlName="Body"></textarea>
+    </mat-form-field>
+    <br/>
+      <button mat-flat-button color="accent" type="submit" [disabled]="!this.post.valid">Post</button>
+  </form>
+</mat-card>
+
+<app-update-posts></app-update-posts>

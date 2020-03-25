@@ -1,0 +1,35 @@
+<mat-card *ngIf="posts && posts.length">
+  <mat-card-header>
+    <h1>Previous Posts</h1>
+  </mat-card-header>
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let post of posts" class="post-panel">
+      <mat-expansion-panel-header (click)="formTitle.value = post.title; formSummary.value = post.summary; formBody.value = post.body;
+      updateForm(formTitle.value, formSummary.value, formBody.value)">
+        <mat-panel-title>
+          <h4>{{post.title}}</h4>
+        </mat-panel-title>
+        <mat-panel-description>
+          <h5>Last Modified: {{post.lastmod | date: 'medium'}}</h5>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <form [formGroup]="postForm">
+      <mat-form-field class="post-panel-content">
+        <input matInput #formTitle id="title" type="text" [value]="post?.title" formControlName="Title" (input)="updateForm(formTitle.value, formSummary.value, formBody.value)">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="post-panel-content">
+        <textarea matInput #formSummary id="summary" rows="6" [value]="post?.summary" formControlName="Summary" (input)="updateForm(formTitle.value, formSummary.value, formBody.value)"></textarea>
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="post-panel-content">
+        <textarea matInput #formBody id="body" rows="10" [value]="post?.body" formControlName="Body" (input)="updateForm(formTitle.value, formSummary.value, formBody.value)"></textarea>
+      </mat-form-field>
+      <br/>
+      <button mat-flat-button color="accent" [disabled]="!postForm.dirty || !postForm.valid" (click)="update(post, formTitle.value, formSummary.value, formBody.value)">Update</button> &nbsp;
+      <button mat-flat-button color="warn" (click)="delete(post.id)">Delete</button>
+    </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

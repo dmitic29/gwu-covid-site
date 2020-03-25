@@ -6,8 +6,33 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBVvz8T9UEpjeQfx5ABGEChnWztm-gIPpg",
+    authDomain: "covid-website.firebaseapp.com",
+    databaseURL: "https://covid-website.firebaseio.com",
+    projectId: "covid-website",
+    storageBucket: "covid-website.appspot.com",
+    messagingSenderId: "47910691690",
+    appId: "1:47910691690:web:1d77886b18ccfb933a3b13",
+    measurementId: "G-MPSLNG5K6G"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <app-root></app-root>
 </body>
 </html>

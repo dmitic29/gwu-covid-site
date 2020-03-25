@@ -1,0 +1,65 @@
+<mat-drawer-container class="drawer-container">
+  <mat-drawer class="drawer-drawer" mode="side" opened>
+    <button class="list-back-button" (click)="toHome()" mat-icon-button color="primary"><mat-icon>keyboard_arrow_left</mat-icon>Home</button>
+    <h4>Quick Links:</h4>
+    <ul class="drawer-list">
+      <li class="drawer-list-item"><button class="list-button" mat-flat-button color="primary" (click)="scroll(title1)">Title1</button></li>
+      <li class="drawer-list-item"><button class="list-button" mat-flat-button color="primary" (click)="scroll(title2)">Title2</button></li>
+      <li class="drawer-list-item"><button class="list-button" mat-flat-button color="primary" (click)="scroll(title3)">Title3</button></li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content class="drawer-content">
+    <mat-toolbar class="tlbr" color="primary">
+      <h1>Guidance For Medical Staff</h1>
+    </mat-toolbar>
+    <div class="drawer-content-contain">
+      <h1>Guidance For Medical Staff</h1>
+      <div #title1 class="info-div">
+        <mat-card class="info-card">
+          <mat-card-header>
+            <mat-card-title>Title 1</mat-card-title>
+            <mat-card-subtitle>Subtitle 1</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="info-card-content">
+            <p>Example example example example example.Example example example example example.Example example example example example.Example example example example example.</p>
+            <p>Example example example example example.Example example example example example.Example example example example example.Example example example example example.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div #title2 class="info-div">
+        <mat-card  class="info-card">
+        <mat-card-header>
+          <mat-card-title>Title 2</mat-card-title>
+          <mat-card-subtitle>Subtitle 2</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="info-card-content">
+          <p>Example example example example example.Example example example example example.Example example example example example.Example example example example example.
+          </p>
+          <p>
+            Example example example example example.Example example example example example.Example example example example example.Example example example example example
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div #title3 class="info-div">
+      <mat-card  class="info-card">
+      <mat-card-header>
+        <mat-card-title>Title 3</mat-card-title>
+        <mat-card-subtitle>Subtitle 3</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="info-card-content">
+        <p>Example example example example example.Example example example example example.Example example example example example.Example example example example example.
+        </p>
+        <p>
+          Example example example example example.Example example example example example.Example example example example example.Example example example example example
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>
