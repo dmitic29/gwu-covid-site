@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "serve": "ng serve",
+    "postinstall": "ng build --prod"
   },
   "engines": {
     "node": "12.16.1",
